@@ -30,6 +30,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -132,6 +138,10 @@
       <Name>VSIXEx</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+  </ItemGroup>
   <Import Project="$(SolutionDir)VSSDK.props" Condition="Exists('$(SolutionDir)VSSDK.props')" />
+  <Import Project="$(SolutionDir)VSSDK.Analyzers.props" Condition="Exists('$(SolutionDir)VSSDK.Analyzers.props')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
