@@ -90,9 +90,7 @@ namespace VSIXEx.Designer
 	public static class VSCTEx
 	{
 		public static IEnumerable<TypeAttributePair<IDSymbolsAttribute>> EnumIDSymbols(this Assembly assembly)
-		{
-			return assembly.EnumTypesWithAttribute<IDSymbolsAttribute>();
-		}
+			=> assembly.EnumTypesWithAttribute<IDSymbolsAttribute>();
 
 		public static IEnumerable<GuidSymbolType> EnumGuidSymbols(this Assembly assembly)
 		{
@@ -115,38 +113,24 @@ namespace VSIXEx.Designer
 
 
 		public static string GenerateIdSymbolStrings(this Assembly assembly)
-		{
-			return Template.TransformToText<VsixIdSymbolStrings>(new { assembly }.ToExpando());
-		}
+			=> Template.TransformToText<VsixIdSymbolStrings>(new { assembly }.ToExpando());
 
 		public static string GenerateKeyBindings(this VSCTModel model)
-		{
-			return Template.TransformToText<VsctKeyBindings>(new { model }.ToExpando());
-		}
+			=> Template.TransformToText<VsctKeyBindings>(new { model }.ToExpando());
 
 		public static string GenerateSymbols(this VSCTModel model)
-		{
-			return Template.TransformToText<VsctSymbols>(new { model }.ToExpando());
-		}
+			=> Template.TransformToText<VsctSymbols>(new { model }.ToExpando());
 
 		public static string GenerateCommandGroups(this VSCTModel model)
-		{
-			return Template.TransformToText<VsctCommandsGroups>(new { model }.ToExpando());
-		}
+			=> Template.TransformToText<VsctCommandsGroups>(new { model }.ToExpando());
 
 		public static string GenerateCommandMenus(this VSCTModel model)
-		{
-			return Template.TransformToText<VsctCommandsMenus>(new { model }.ToExpando());
-		}
+			=> Template.TransformToText<VsctCommandsMenus>(new { model }.ToExpando());
 
 		public static string GenerateCommandButtons(this VSCTModel model)
-		{
-			return Template.TransformToText<VsctCommandsButtons>(new { model }.ToExpando());
-		}
+			=> Template.TransformToText<VsctCommandsButtons>(new { model }.ToExpando());
 
 		public static string GenerateCommandBitmaps(this VSCTModel model)
-		{
-			return Template.TransformToText<VsctCommandsBitmaps>(new { model }.ToExpando());
-		}
+			=> Template.TransformToText<VsctCommandsBitmaps>(new { model }.ToExpando());
 	}
 }
