@@ -124,12 +124,21 @@ namespace VSIXEx.Designer
 				.ToList());
 		}
 
+		public Guid PackageGuid => GuidSymbols.Value
+			.Where(s => s.Value.IsPackageGuid)
+			.Select(s => s.Key)
+			.First();
+		public string PackageGuidName => GuidSymbols.Value
+			.Where(s => s.Value.IsPackageGuid)
+			.Select(s => s.Value.Name)
+			.First();
+
 		public IEnumerable<TypeAttributePair<IDSymbolsAttribute>> EnumIDSymbols() => IDSymbols.Value;
 
 		public IEnumerable<CommandIDsType> EnumCommandIDs(bool withHidden = false)
 		{
 			return GuidSymbols.Value
-				.Where(i => !i.Value.Hidden || withHidden)
+				.Where(i => !i.Value.IsHidden || withHidden)
 				.Select(i => new CommandIDsType
 				{
 					Guid = i.Key,

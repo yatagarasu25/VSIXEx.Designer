@@ -13,7 +13,8 @@ namespace VSIXEx.Designer
 	{
 		public Guid Guid;
 		public string Name;
-		public bool Hidden;
+		public bool IsHidden;
+		public bool IsPackageGuid;
 	}
 
 	public struct CommandIDsType
@@ -102,7 +103,8 @@ namespace VSIXEx.Designer
 					{
 						Guid = new Guid(field.Field.GetValue(null) as string),
 						Name = field.Attribute.GetName(field.Field),
-						Hidden = field.Attribute.Hidden
+						IsHidden = field.Attribute.Hidden,
+						IsPackageGuid = field.Field.HasAttribute<PackageGuidSymbolAttribute>()
 					};
 				}
 			}
