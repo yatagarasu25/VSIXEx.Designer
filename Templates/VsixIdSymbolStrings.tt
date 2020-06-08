@@ -24,7 +24,7 @@ namespace <#= ns.Key #>.s
 		string _post = ", " + ids.Type.AssemblyQualifiedName;
 		foreach (var id in ids.Type.EnumCommandIds())
 		{
-#>		public const string <#= id.Name #> = "<#= _pre #><#= id.Name #><#= _post #>";
+#>		[VSIXEx.Attributes.Reference(<#= _pre #><#= id.Name #>)] public const string <#= id.Name #> = "<#= _pre #><#= id.Name #><#= _post #>";
 <#		} #>
 	}
 <#	} #>

@@ -73,7 +73,20 @@ foreach (var ns in assembly.EnumIDSymbols().GroupBy(id => id.Type.Namespace))
             
             #line default
             #line hidden
-            this.Write("\t\tpublic const string ");
+            this.Write("\t\t[VSIXEx.Attributes.Reference(");
+            
+            #line 27 "D:\workspace\UE4AssistantVSIX\VSIXEx.Designer\Templates\VsixIdSymbolStrings.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_pre));
+            
+            #line default
+            #line hidden
+            
+            #line 27 "D:\workspace\UE4AssistantVSIX\VSIXEx.Designer\Templates\VsixIdSymbolStrings.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(id.Name));
+            
+            #line default
+            #line hidden
+            this.Write(")] public const string ");
             
             #line 27 "D:\workspace\UE4AssistantVSIX\VSIXEx.Designer\Templates\VsixIdSymbolStrings.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(id.Name));
