@@ -1,9 +1,0 @@
-﻿<#@ template debug="false" hostspecific="false" language="C#" #>
-<#@ assembly name="System.Core" #>
-<#@ assembly name="$(TargetPath)" #>
-<#@ assembly name="$(TargetDir)VSIXEx.dll" #>
-<#@ import namespace="VSIXEx" #>
-<#
-	//var visxAssembly = typeof(VsGuidSymbols).Assembly;
-#>
-<# //= visxAssembly.GenerateIdSymbolStrings() #>

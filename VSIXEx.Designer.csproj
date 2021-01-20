@@ -85,11 +85,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VsixIdSymbolStrings.tt</DependentUpon>
     </Compile>
-    <Compile Include="VSIXExIDs.s.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VSIXExIDs.s.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Templates\VsctCommandsButtons.tt">
@@ -119,10 +114,6 @@
     <Content Include="Templates\VsixIdSymbolStrings.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>VsixIdSymbolStrings.cs</LastGenOutput>
-    </Content>
-    <Content Include="VSIXExIDs.s.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>VSIXExIDs.s.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
